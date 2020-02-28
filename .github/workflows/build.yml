@@ -59,14 +59,13 @@ jobs:
           DRAFT: "false"
           PRERELEASE: "false"
           PRERELEASE_NAME: Release ${{ github.ref }}
-          ASSET_PATH: /tmp/luci-app-passwall_${{ steps.build_ipk.outputs.tag_name }}_all.ipk
       - name: Upload Release Asset
         id: upload-release-asset 
         uses: actions/upload-release-asset@v1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          upload_url: ${{ steps.action-release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
           asset_path: /tmp/luci-app-passwall_${{ steps.build_ipk.outputs.tag_name }}_all.ipk
           asset_name: luci-app-passwall_${{ steps.build_ipk.outputs.tag_name }}_all.ipk
           asset_content_type: application/octet-stream
