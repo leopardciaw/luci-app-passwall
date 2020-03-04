@@ -8,7 +8,7 @@ local n = {}
 uci:foreach(appname, "nodes", function(e)
     if e.type and e.remarks and e.port and e.address and e.address ~= "127.0.0.1" then
         if e.address:match("[\u4e00-\u9fa5]") and e.address:find("%.") and e.address:sub(#e.address) ~= "." then
-            e.remark = "%s£º[%s] %s:%s" % {translate(e.type), e.remarks, e.address, e.port}
+            e.remark = "%sï¼š[%s] %s:%s" % {translate(e.type), e.remarks, e.address, e.port}
             n[e[".name"]] = e
         end
     end
