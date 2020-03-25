@@ -60,10 +60,10 @@ config global_app
 config global_subscribe
 	option subscribe_proxy '0'
 	option auto_update_subscribe '0'
-	list filter_keyword '¹ıÆÚÊ±¼ä'
-	list filter_keyword 'Ê£ÓàÁ÷Á¿'
-	list filter_keyword 'QQÈº'
-	list filter_keyword '¹ÙÍø'
+	list filter_keyword 'è¿‡æœŸæ—¶é—´'
+	list filter_keyword 'å‰©ä½™æµé‡'
+	list filter_keyword 'QQç¾¤'
+	list filter_keyword 'å®˜ç½‘'
 
 config auto_switch
 	option testing_time '1'
